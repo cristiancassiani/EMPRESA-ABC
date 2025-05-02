@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Empresas ABC- Usuario</title>
+  <link rel="stylesheet" href="./styles/styles.css" />
+</head>
+<body>
+  <header class="header">
+    <div class="logo">
+      <img src="./img/logo.png" alt="Empresas ABC" class="logo-img" />
+    </div>
+    <div class="barra-busqueda">
+      <input type="text" id="buscarProducto" placeholder="Buscar productos..." oninput="filtrarProductos()" />
+    </div>
+    <div class="header-buttons">
+      <span id="nombre-usuario" class="nombre-usuario"></span>
+      <button id="cerrar-sesion" class="btn-icono" onclick="cerrarSesion()" style="display: none;">🔒</button>
+      <button class="btn-icono" onclick="toggleFavoritos()">💖</button>
+      <button class="btn-icono" onclick="toggleCarrito()">🛒<span id="cart-count">0</span></button>
+      <button class="btn-icono" onclick="toggleModo()">🌙/☀️</button>
+    </div>
+  </header>
+
+  <section id="registro-section">
+    <h2>Registrarse</h2>
+    <input type="text" id="nombre" placeholder="Nombre completo" />
+    <input type="text" id="cedula" placeholder="Cédula" />
+    <input type="text" id="direccion" placeholder="Dirección" />
+    <input type="email" id="correo" placeholder="Correo electrónico" />
+    <button onclick="registrarUsuario()">Registrarme</button>
+  </section>
+
+  <section class="banner hidden" id="banner-section">
+    <img src="./img/banner.jpg" alt="Promoción Especial" class="banner-img" />
+  </section>
+
+  <section class="filtros hidden" id="filtros-section">
+    <input type="number" id="precioMin" placeholder="Precio mínimo" oninput="filtrarProductos()" />
+    <input type="number" id="precioMax" placeholder="Precio máximo" oninput="filtrarProductos()" />
+    <select id="ordenarPor" onchange="filtrarProductos()">
+      <option value="">Ordenar por</option>
+      <option value="menor">Menor precio</option>
+      <option value="mayor">Mayor precio</option>
+    </select>
+    <button onclick="limpiarFiltros()">Limpiar Filtros</button>
+  </section>
+
+  <section id="productos" class="productos-section hidden"></section>
+
+  <section id="carrito" class="carrito hidden">
+    <h2>🛒 Carrito de Compras</h2>
+    <div id="cart-items"></div>
+    <h3 id="cart-total"></h3>
+    <button onclick="vaciarCarrito()">Vaciar Carrito</button>
+    <button onclick="confirmarCompra()">Confirmar Compra</button>
+  </section>
+
+  <div class="modal hidden" id="modal-pago">
+    <div class="modal-contenido">
+      <h2>¿Cómo deseas pagar?</h2>
+      <div class="botones-pago">
+        <button class="btn-pago nequi" onclick="seleccionarMetodoPago('Nequi')">📱 Nequi</button>
+        <button class="btn-pago tarjeta" onclick="seleccionarMetodoPago('Tarjeta de Crédito')">💳 Tarjeta</button>
+        <button class="btn-pago efectivo" onclick="seleccionarMetodoPago('Efectivo')">💵 Efectivo</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal hidden" id="mensaje-final">
+    <div class="modal-contenido">
+      <h2>¡Gracias por tu compra!</h2>
+      <p>Tu factura fue descargada correctamente.</p>
+      <button onclick="cerrarMensajeFinal()">Cerrar</button>
+    </div>
+  </div>
+
+  <footer class="footer">
+    <p>&copy; 2025 Empresas ABC - Todos los derechos reservados</p>
+  </footer>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.5.25/jspdf.plugin.autotable.min.js"></script>
+  <script src="./Js/app.js"></script>
+</body>
+</html>
