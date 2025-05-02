@@ -1,0 +1,393 @@
+/* Reset general */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background: #f5f7fa;
+  color: #333;
+}
+
+/* Header */
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 2rem;
+  background: linear-gradient(90deg, #4e54c8, #8f94fb);
+  color: #fff;
+}
+
+.logo-img {
+  height: 50px;
+}
+
+.barra-busqueda input {
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  border: none;
+  outline: none;
+  font-size: 16px;
+  width: 280px;
+}
+
+.header-buttons {
+  display: flex;
+  gap: 1rem;
+}
+
+.btn-icono {
+  background: transparent;
+  border: none;
+  font-size: 1.5rem;
+  color: #fff;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+.btn-icono:hover {
+  transform: scale(1.2);
+}
+
+/* Banner */
+.banner {
+  margin: 2rem 0;
+  text-align: center;
+}
+
+.banner-img {
+  width: 90%;
+  max-width: 1200px;
+  border-radius: 10px;
+}
+
+/* Registro */
+#registro-section {
+  padding: 2rem;
+  text-align: center;
+}
+
+#registro-section input {
+  padding: 10px 15px;
+  margin: 10px;
+  border: 1px solid #ccc;
+  border-radius: 12px;
+  outline: none;
+  font-size: 16px;
+  background-color: #ffffff;
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+
+#registro-section input:focus {
+  border-color: #4e54c8;
+  box-shadow: 0px 0px 8px rgba(78, 84, 200, 0.5);
+}
+
+#registro-section button {
+  padding: 10px 20px;
+  background: linear-gradient(90deg, #4e54c8, #8f94fb);
+  color: white;
+  border: none;
+  border-radius: 12px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+#registro-section button:hover {
+  background: linear-gradient(90deg, #3b40a4, #6b70d3);
+}
+
+/* Productos */
+.productos-section {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+  padding: 2rem;
+}
+
+.producto-card {
+  background: #fff;
+  border-radius: 12px;
+  padding: 1rem;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  transition: transform 0.3s;
+}
+
+.producto-card:hover {
+  transform: translateY(-5px);
+}
+
+.producto-card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.producto-card h3 {
+  margin: 10px 0 5px;
+  font-size: 18px;
+}
+
+.producto-card p {
+  font-size: 16px;
+  font-weight: bold;
+  color: #333;
+}
+
+.producto-card button {
+  margin: 5px 5px 0;
+  padding: 8px 12px;
+  background: #4e54c8;
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background 0.3s;
+  font-size: 14px;
+}
+
+.producto-card button:hover {
+  background: #3b40a4;
+}
+
+/* Carrito */
+.carrito {
+  padding: 2rem;
+  background: #fff;
+  border-radius: 10px;
+  margin-top: 2rem;
+}
+
+#cart-items {
+  margin-bottom: 2rem;
+}
+
+#cart-items div {
+  background: #f1f1f1;
+  padding: 1rem;
+  margin: 1rem 0;
+  border-radius: 10px;
+  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.1);
+}
+
+#cart-total {
+  font-weight: bold;
+  font-size: 18px;
+}
+
+.carrito button {
+  margin: 0.5rem;
+  padding: 10px 20px;
+  background: #00b894;
+  border: none;
+  color: white;
+  border-radius: 12px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.carrito button:hover {
+  background: #019875;
+}
+
+/* Inputs y filtros bonitos */
+input[type="text"],
+input[type="number"],
+input[type="email"],
+select {
+  padding: 10px 15px;
+  margin: 10px;
+  border: 1px solid #ccc;
+  border-radius: 12px;
+  outline: none;
+  font-size: 16px;
+  background-color: #ffffff;
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+
+input[type="text"]:focus,
+input[type="number"]:focus,
+input[type="email"]:focus,
+select:focus {
+  border-color: #4e54c8;
+  box-shadow: 0px 0px 8px rgba(78, 84, 200, 0.5);
+}
+
+/* Botón Limpiar Filtros */
+.filtros button {
+  padding: 10px 16px;
+  background-color: #019875;
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  font-size: 15px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin-left: 10px;
+}
+
+.filtros button:hover {
+  background-color: #e05656;
+}
+
+/* Modal de método de pago y confirmación */
+#modal-pago,
+#mensaje-final {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2000;
+}
+
+#modal-pago .modal-contenido,
+#mensaje-final .modal-contenido {
+  background: #fff;
+  padding: 2rem 3rem;
+  border-radius: 12px;
+  text-align: center;
+  animation: fadeIn 0.4s ease;
+  width: 90%;
+  max-width: 400px;
+}
+
+#modal-pago.hidden,
+#mensaje-final.hidden {
+  display: none;
+}
+
+.botones-pago {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.btn-pago {
+  padding: 15px;
+  font-size: 18px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background 0.3s;
+  color: #fff;
+}
+
+.btn-pago.nequi {
+  background: #a742f5;
+}
+
+.btn-pago.tarjeta {
+  background: #007bff;
+}
+
+.btn-pago.efectivo {
+  background: #28a745;
+}
+
+.btn-pago:hover {
+  opacity: 0.8;
+}
+
+#mensaje-final button {
+  background-color: #4e54c8;
+  padding: 10px 20px;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  margin-top: 1rem;
+}
+
+#mensaje-final button:hover {
+  opacity: 0.85;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Footer */
+.footer {
+  background: #4e54c8;
+  color: white;
+  text-align: center;
+  padding: 1rem;
+  margin-top: 2rem;
+}
+
+/* Admin panel */
+.admin-panel {
+  padding: 2rem;
+  max-width: 900px;
+  margin: auto;
+}
+
+.admin-panel input {
+  padding: 10px;
+  margin: 10px 10px 20px 0;
+  border-radius: 10px;
+  border: 1px solid #ccc;
+}
+
+.compra-card {
+  background: #fff;
+  padding: 1.5rem;
+  border-radius: 12px;
+  margin-bottom: 1.5rem;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.05);
+}
+
+.compra-card button {
+  margin-top: 1rem;
+  padding: 10px 20px;
+  background-color: #4e54c8;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 15px;
+}
+
+.compra-card button:hover {
+  background-color: #3a3f9d;
+}
+button {
+  margin: 4px;
+  padding: 8px 14px;
+  border: none;
+  border-radius: 8px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+button:hover {
+  opacity: 0.9;
+}
+.input-error {
+  border: 2px solid red !important;
+  background-color: #ffe6e6;
+}
